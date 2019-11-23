@@ -1,23 +1,27 @@
 import React from 'react';
 import './App.css';
+import { Typography, makeStyles } from '@material-ui/core';
+import BookShelves from './components/BookShelves';
+
+const useStyles = makeStyles({
+  root: {
+    flexGrow: 1,
+  },
+  header: {
+    fontWeight: 600,
+    marginTop: '2rem',
+  },
+});
 
 function App() {
+  const classes = useStyles();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={classes.root}>
+      <Typography className={classes.header} align="center" variant="h3">
+        MyReads
+      </Typography>
+      <BookShelves />
     </div>
   );
 }
